@@ -1,0 +1,17 @@
+//
+//  AppDelegate.h
+//  x18-leak
+//
+//  Created by Brandon Azad on 2/26/18.
+//  Copyright © 2018 Brandon Azad. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+
+@end
+
