@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
-	printf("0x%016llx\n", x18_leak());
+	printf("Lel0_synchronous_vector_64_long: 0x%016llx\n", x18_leak());
 	exit(0);
 	return YES;
 }
