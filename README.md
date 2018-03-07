@@ -25,13 +25,15 @@ comment in [`osfmk/arm64/proc_reg.h`][proc_reg.h]:
 
 That is, when transitioning from EL1 (kernel mode) to EL0 (user mode), as many kernel mappings as
 possible will be removed. This should limit the possible attack surface against kernel memory
-mappings when exploiting architectural vulnerabilities like Spectre or Meltdown.
+mappings when exploiting microarchitectural vulnerabilities like Spectre or Meltdown.
 
 If you look through the diff between XNU versions 4570.20.62 and 4570.31.3, you'll find a number of
-new references to register `x18` pop up in the file `osfmk/arm64/locore.s` in relation to
-`__ARM_KERNEL_PROTECT__`. In particular, you'll see that the exception vector
-`Lel0_synchronous_vector_64`, which is the exception vector invoked on a system call (instruction
-`svc #0`), now looks like this:
+new references to register `x18` pop up in the file [`osfmk/arm64/locore.s`][XNU 4570.31.3
+locore.s] in relation to `__ARM_KERNEL_PROTECT__`. In particular, you'll see that the exception
+vector `Lel0_synchronous_vector_64`, which is the exception vector invoked on a system call
+(instruction `svc #0`), now looks like this:
+
+[XNU 4570.31.3 locore.s]: https://opensource.apple.com/source/xnu/xnu-4570.31.3/osfmk/arm64/locore.s.auto.html
 
 ```assembly
 	.text

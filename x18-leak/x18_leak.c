@@ -18,7 +18,7 @@
  *
  * That is, when transitioning from EL1 (kernel mode) to EL0 (user mode), as many kernel mappings
  * as possible will be removed. This should limit the possible attack surface against kernel memory
- * mappings when exploiting architectural vulnerabilities like Spectre or Meltdown.
+ * mappings when exploiting microarchitectural vulnerabilities like Spectre or Meltdown.
  *
  * If you look through the diff between XNU versions 4570.20.62 and 4570.31.3, you'll find a number
  * of new references to register x18 pop up in the file osfmk/arm64/locore.s in relation to
